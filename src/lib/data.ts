@@ -16,6 +16,11 @@ export interface MediaProject {
     image: string
     link?: string
     strategy: BilingualText
+    workflow?: {
+        name: BilingualText
+        tools: string[]
+        process: BilingualText
+    }
     priority: number
 }
 
@@ -56,6 +61,14 @@ export const mediaProjects: MediaProject[] = [
             en: "Hybrid AI workflow combining Runway for video generation, Midjourney for assets, and CapCut for final editing. Focus on high-retention storytelling with strategic hook placement.",
             ar: "سير عمل هجين بالذكاء الاصطناعي يجمع بين Runway لتوليد الفيديو، وMidjourney للأصول، وCapCut للتحرير النهائي. التركيز على سرد القصص عالي الاحتفاظ مع وضع خطافات استراتيجية.",
         },
+        workflow: {
+            name: { en: "The 'Hybrid-Stack' Workflow", ar: "سير العمل 'الهجين'" },
+            tools: ["Google Nano Banana Pro", "CapCut Seadream", "Google Studio AI", "ElevenLabs", "Hedra", "HeyGen"],
+            process: {
+                en: "Leveraging Google Nano Banana Pro and CapCut Seadream for consistent stylistic frames. Audio engineered with Google Studio AI for dialect nuances and ElevenLabs for narration. Character animation via Hedra and HeyGen for precise lip-syncing without the 'uncanny valley' effect.",
+                ar: "الاستفادة من Google Nano Banana Pro وCapCut Seadream للحصول على إطارات أسلوبية متسقة. هندسة الصوت باستخدام Google Studio AI للاختلافات اللهجية وElevenLabs للسرد. تحريك الشخصيات عبر Hedra وHeyGen لمزامنة دقيقة للشفاه دون تأثير 'الوادي الغريب'."
+            }
+        },
         priority: 1,
     },
     {
@@ -78,6 +91,14 @@ export const mediaProjects: MediaProject[] = [
             en: "Platform-specific optimization with velocity editing techniques. Strategic posting times based on audience analytics. Cross-platform content adaptation for maximum reach.",
             ar: "تحسين خاص بالمنصة مع تقنيات التحرير السريع. أوقات نشر استراتيجية بناءً على تحليلات الجمهور. تكييف المحتوى عبر المنصات لأقصى وصول.",
         },
+        workflow: {
+            name: { en: "The 'Hybrid' Edit", ar: "التحرير 'الهجين'" },
+            tools: ["CapCut Velocity", "Script-to-Voice AI", "CapCut Adv. Effects"],
+            process: {
+                en: "Manual selection of high-impact scenes using CapCut Velocity Edits to match fast pacing. AI augmentation via Script-to-Voice for unique narrative context to avoid copyright strikes. Heavy use of CapCut's Advanced Effects library ('Ken Burns on Steroids').",
+                ar: "اختيار يدوي للمشاهد عالية التأثير باستخدام تعديلات CapCut Velocity لتتناسب مع الوتيرة السريعة. التعزيز بالذكاء الاصطناعي عبر تحويل النص إلى صوت لسياق سردي فريد لتجنب مخالفات حقوق الطبع والنشر. استخدام مكثف لمكتبة تأثيرات CapCut المتقدمة."
+            }
+        },
         priority: 1,
     },
     {
@@ -98,6 +119,14 @@ export const mediaProjects: MediaProject[] = [
         strategy: {
             en: "SEO-first approach with keyword research for evergreen topics. High production value with professional voiceover and cinematic editing. Focus on watch time optimization.",
             ar: "نهج يركز على SEO مع البحث عن الكلمات الرئيسية للمواضيع الدائمة. قيمة إنتاجية عالية مع تعليق صوتي احترافي وتحرير سينمائي. التركيز على تحسين وقت المشاهدة.",
+        },
+        workflow: {
+            name: { en: "The 'Atmosphere' Pipeline", ar: "خط إنتاج 'الغلاف الجوي'" },
+            tools: ["Google Whisk", "Dreamina", "ElevenLabs", "AI Ambient Tracks"],
+            process: {
+                en: "Generating high-resolution, wide-angle environments using Google Whisk and Dreamina for a cohesive visual mood. Layering ElevenLabs narration over AI-generated ambient tracks for deep engagement and relaxation.",
+                ar: "إنشاء بيئات عالية الدقة وواسعة الزاوية باستخدام Google Whisk وDreamina لمزاج بصري متماسك. وضع طبقات من سرد ElevenLabs فوق المسارات المحيطة المولدة بالذكاء الاصطناعي للمشاركة العميقة والاسترخاء."
+            }
         },
         priority: 1,
     },

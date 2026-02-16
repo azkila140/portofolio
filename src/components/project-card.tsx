@@ -8,11 +8,11 @@ import { ArrowRight, ExternalLink } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import type { SoftwareProject } from "@/lib/data"
+import type { SoftwareProject, MediaProject } from "@/lib/data"
 import { useLanguage, getBilingualText } from "@/lib/i18n"
 
 interface ProjectCardProps {
-    project: SoftwareProject
+    project: SoftwareProject | MediaProject
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
@@ -58,7 +58,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
                             <CardTitle className="text-2xl font-serif group-hover:text-yellow-400 transition-colors">
                                 {getBilingualText(project.title, language)}
                             </CardTitle>
-                            <p className="text-sm text-yellow-400/80 mt-1">{getBilingualText(project.subtitle, language)}</p>
+                            {'subtitle' in project && (
+                                <p className="text-sm text-yellow-400/80 mt-1">{getBilingualText(project.subtitle, language)}</p>
+                            )}
                         </div>
                         {project.link && (
                             <a
@@ -86,6 +88,25 @@ export function ProjectCard({ project }: ProjectCardProps) {
                             </div>
                         ))}
                     </div>
+
+                    {/* Workflow Section */}
+                    {'workflow' in project && project.workflow && (
+                        <div className="bg-slate-900/50 p-3 rounded-lg border border-slate-800">
+                            <h4 className="text-xs font-bold text-yellow-500 mb-2 uppercase tracking-wider">
+                                {getBilingualText(project.workflow.name, language)}
+                            </h4>
+                            <div className="flex flex-wrap gap-1.5 mb-2">
+                                {project.workflow.tools.map((tool: string) => (
+                                    <span key={tool} className="text-[10px] px-2 py-0.5 bg-slate-800 text-slate-300 rounded-full border border-slate-700">
+                                        {tool}
+                                    </span>
+                                ))}
+                            </div>
+                            <p className="text-xs text-slate-400 leading-relaxed">
+                                {getBilingualText(project.workflow.process, language)}
+                            </p>
+                        </div>
+                    )}
 
                     {/* Tags */}
                     <div className="flex flex-wrap gap-2">
